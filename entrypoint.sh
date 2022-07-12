@@ -76,12 +76,6 @@ else
   export SUBSPACE_DISABLE_DNS=0
 fi
 
-if [ "$SUBSPACE_IPV6_NAT_ENABLED" == "0" ] && [ "$SUBSPACE_IPV4_NAT_ENABLED" == "0" ]; then
-  echo "One of envionment variables SUBSPACE_IPV6_NAT_ENABLED, SUBSPACE_IPV4_NAT_ENABLED must be set to 1."
-  echo "Got SUBSPACE_IPV6_NAT_ENABLED=$SUBSPACE_IPV6_NAT_ENABLED, SUBSPACE_IPV4_NAT_ENABLED=$SUBSPACE_IPV4_NAT_ENABLED"
-  exit 1
-fi
-
 # Empty out inherited nameservers
 echo "" >/etc/resolv.conf
 # Set DNS servers
